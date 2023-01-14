@@ -2,8 +2,10 @@ from glob import glob
 import os
 import json
 
-labels_file = "/home/ubuntu/prep_data/labels.json"
-output_file = "/home/ubuntu/prep_data/cffn_pairs.txt"
+BASE_PATH = "/home/mtandon/DeepFake-Detection"
+
+labels_file = BASE_PATH + "/metadata/labels.json"
+output_file = BASE_PATH + "/prep_data/cffn_pairs.txt"
 metadata = {}
 with open(labels_file) as f:
     metadata = json.load(f)

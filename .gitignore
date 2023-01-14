@@ -10,6 +10,11 @@ venv/
 # test images
 .jpg
 
+# data folders
+data/
+metadata/
+prep_data/
+
 # Output folders
 __pycache__/
 checkpoints/
@@ -20,3 +25,6 @@ plots/
 
 # Random Scripts
 data_preparation/temp.py
+
+# visual studio
+.vscode/

@@ -3,11 +3,13 @@ import json
 import cv2
 from glob import glob
 import sys
+from globals import BASE_PATH
 
-video_filenames = glob("/home/ubuntu/cs230_data/*/*.mp4")
-num_examples = len(video_filenames) # change to use a smaller subset of the data
+video_filenames = glob(BASE_PATH+"/data/*/*.mp4")
+# change to use a smaller subset of the data
+num_examples = len(video_filenames)
 subset_vid_names = video_filenames[:num_examples]
-meta_files = glob("/home/ubuntu/cs230_data/*/metadata.json")
+meta_files = glob(BASE_PATH+"/data/*/metadata.json")
 
 sample_frames = [0, 60, 120, 180, 240]
 
@@ -27,12 +29,14 @@ for vid in subset_vid_names:
         name = vid_name.split(".")[0] + "_" + str(sample) + ".jpg"
         labels[name] = label
 
-print(len(labels))
-print(list(labels.keys())[654])
-print(list(labels.values())[654])
-print(list(labels.keys())[78451])
-print(list(labels.values())[78451])
-with open("/home/ubuntu/big_data/labels.json", "w+") as fp:
+print("Total No of images: ", len(labels))
+
+# print(list(labels.keys())[654])
+# print(list(labels.values())[654])
+# print(list(labels.keys())[78451])
+# print(list(labels.values())[78451])
+
+with open(BASE_PATH+"/metadata/labels.json", "w+") as fp:
     json.dump(labels, fp)
 
 count = 0
@@ -51,7 +55,7 @@ for vid in subset_vid_names:
         if ret == False:
             break
         if i in sample_frames:
-            name = "/home/ubuntu/big_data/" + img_name + "_" + str(i) + ".jpg"
+            name = BASE_PATH + "/data/" + img_name + "_" + str(i) + ".jpg"
             cv2.imwrite(name, frame)
             last_name = name
         i += 1

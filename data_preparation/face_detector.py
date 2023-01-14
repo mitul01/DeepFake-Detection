@@ -7,8 +7,8 @@ import os
 
 batch_size = 128
 
-img_files = glob("/home/ubuntu/big_data/*.jpg")
-dir_name = "/home/ubuntu/face_cropped/"
+img_files = glob("/home/mtandon/data/*.jpg")
+dir_name = "/home/mtandon/face_cropped/"
 
 for start_index in range(0, len(img_files), batch_size):
     # get a batch of image filenames from the directory

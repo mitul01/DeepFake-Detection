@@ -2,7 +2,7 @@ import os
 import json
 from glob import glob
 
-data_folder = "/home/ubuntu/cs230_data"
+data_folder = "/home/ubuntu/data"
 # bucket_dirs = glob("/home/ubuntu/cs230_data/*/")
 metadata_files = glob("/home/ubuntu/cs230_data/*/metadata.json")
 

@@ -3,7 +3,7 @@ import cv2
 from glob import glob
 
 def main():
-    video_filenames = glob("/home/ubuntu/cs230_data/*/*.mp4")
+    video_filenames = glob("/home/ubuntu/data/*/*.mp4")
 
     video_sizes(video_filenames)
     video_frames_analyze(video_filenames)
